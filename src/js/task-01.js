@@ -7,7 +7,3 @@ for (let item of items) {
  console.log('Category:', tittel.textContent)
  console.log('Elements: ', itemsEl.length)
 }
-
-
-// console.log(text)
-// console.log(items[0].textContent)
