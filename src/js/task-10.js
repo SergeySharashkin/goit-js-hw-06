@@ -25,6 +25,7 @@ return amount
 buttonCreate.addEventListener("click", createBoxes);
 let sizeBoxStart=30;
 function createBoxes() {
+  
   console.log(amount)
   let newBoxes = [];
   for (let i = 1; i <= amount; i += 1) {
@@ -44,4 +45,5 @@ function createBoxes() {
 }
 buttonDestroy.addEventListener("click", () => {
   boxesEl.innerHTML =''
+  sizeBoxStart = 30
 });
