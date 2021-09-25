@@ -23,22 +23,25 @@ return amount
 // console.log(number);
 // let amount = number;
 buttonCreate.addEventListener("click", createBoxes);
-
+let sizeBoxStart=30;
 function createBoxes() {
   console.log(amount)
   let newBoxes = [];
-  for (let i = 0; i < amount; i += 1) {
+  for (let i = 1; i <= amount; i += 1) {
     
     const newBox = document.createElement("div");
-    const sizeBox = 30 + i * 10;
+    const sizeBox = sizeBoxStart + i * 10;
     newBox.style.width = `${sizeBox}px`;
     newBox.style.height = `${sizeBox}px`;
     newBox.style.backgroundColor = getRandomHexColor();
     newBox.style.margin = "10px";
     // console.log(newBox);
     newBoxes.push(newBox);
-
+    sizeBoxStart += i*10; 
   }
 
   boxesEl.append(...newBoxes);
 }
+buttonDestroy.addEventListener("click", () => {
+  boxesEl.innerHTML =''
+});
