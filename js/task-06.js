@@ -9,5 +9,5 @@ function addClass() {
      }
     else{inputEl.classList = 'validation-input invalid'
     }
-    return 
+    
 }

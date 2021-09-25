@@ -13,18 +13,32 @@ const images = [
   },
 ];
 const list = document.querySelector(".gallery");
+const imgMarkup = createImgList(images);
+list.insertAdjacentHTML('beforeend', imgMarkup)
 list.classList = 'list_task3'
-const itemsEl = images.map((property) => {
-  const itemEl = document.createElement("li");
-  const imgEl = document.createElement("img");
-  imgEl.src = property.url;
-  imgEl.alt = property.alt;
-  imgEl.width = 320;
-  imgEl.height = 200;
-  imgEl.classList = 'item_task3'
-  itemEl.appendChild(imgEl);
-  return itemEl;
-});
+// const itemsEl = images.map((property) => {
+//   const itemEl = document.createElement("li");
+//   const imgEl = document.createElement("img");
+//   imgEl.src = property.url;
+//   imgEl.alt = property.alt;
+//   imgEl.width = 320;
+//   imgEl.height = 200;
+//   imgEl.classList = 'item_task3'
+//   itemEl.appendChild(imgEl);
+//   return itemEl;
+// });
 
 
-list.append(...itemsEl)
+// list.append(...itemsEl)
+function createImgList(images) {
+  return images
+  .map(({url, alt})=>{
+    return `
+    <li class = "item_task3">
+       <img src = '${url}' alt = '${alt}' width = '320' height = '200'>
+    </li>`
+  
+  })
+  .join('')
+  
+}

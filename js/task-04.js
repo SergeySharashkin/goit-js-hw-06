@@ -5,13 +5,13 @@ const valueEl = document.querySelector("#value");
 
 minus.addEventListener("click", () => {
  counterValue -= 1;
- return valueEl.textContent = counterValue;
+ valueEl.textContent = counterValue;
 });
 plus.addEventListener('click', () => {
 counterValue += 1;
- return valueEl.textContent = counterValue;
+ valueEl.textContent = counterValue;
 })
 
 
-console.log(minus);
-console.log(plus);
+// console.log(minus);
+// console.log(plus);
