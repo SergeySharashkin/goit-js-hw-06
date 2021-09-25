@@ -11,20 +11,24 @@ const boxesEl = document.querySelector("#boxes");
 boxesEl.style.display = "flex";
 boxesEl.style.alignItems = "center";
 // достаю из инпута нужное количество боксов
-let number;
+let amount=0;
+
 inputEl.addEventListener("input", addNumber);
 function addNumber(event) {
-  console.log(event.currentTarget.value)
- number = event.currentTarget.value
- return
+  // console.log(event.currentTarget.value)
+ amount = event.currentTarget.value
+return amount
+ 
 }
-console.log(number);
-let amount = number;
-buttonCreate.addEventListener("click", createBoxes(amount));
+// console.log(number);
+// let amount = number;
+buttonCreate.addEventListener("click", createBoxes);
 
-function createBoxes(amount) {
+function createBoxes() {
+  console.log(amount)
   let newBoxes = [];
   for (let i = 0; i < amount; i += 1) {
+    
     const newBox = document.createElement("div");
     const sizeBox = 30 + i * 10;
     newBox.style.width = `${sizeBox}px`;
@@ -33,6 +37,7 @@ function createBoxes(amount) {
     newBox.style.margin = "10px";
     // console.log(newBox);
     newBoxes.push(newBox);
+
   }
 
   boxesEl.append(...newBoxes);
